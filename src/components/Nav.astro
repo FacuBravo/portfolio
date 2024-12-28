@@ -1,0 +1,45 @@
+<nav>
+    <ul>
+        <li class="selected"><a href="">Inicio</a></li>
+        <li><a href="">Proyectos</a></li>
+        <li><a href="">Habilidades</a></li>
+        <li><a href="">Sobre mí</a></li>
+    </ul>
+</nav>
+
+<style>
+    nav {
+        position: sticky;
+        top: 32px;
+        margin: 32px auto;
+        width: fit-content;
+        background-color: var(--black_transparent);
+        border-radius: 999px;
+        backdrop-filter: blur(16px);
+    }
+
+    nav > ul {
+        font-family: "Kumbh Sans Variable", sans-serif;
+        display: flex;
+        padding: 12px;
+        gap: 12px;
+        list-style: none;
+    }
+
+    ul > li {
+        padding: 12px 24px;
+        border-radius: 999px;
+        backdrop-filter: blur(16px);
+    }
+
+    li > a {
+        text-decoration: none;
+        color: var(--white);
+        font-size: 20px;
+        font-weight: 900;
+    }
+
+    .selected {
+        background-color: var(--black_transparent);
+    }
+</style>
