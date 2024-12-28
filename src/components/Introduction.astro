@@ -1,0 +1,46 @@
+---
+import SocialMedia from "./SocialMedia.astro";
+---
+
+<section>
+    <article class="info">
+        <h1>Hola<span>!</span> Soy Facundo Bravo<span>.</span></h1>
+        <p>Desarrollador Web</p>
+    </article>
+    
+    <SocialMedia></SocialMedia>
+</section>
+
+<style>
+    section {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 920px;
+        background-color: var(--white);
+        padding: 32px;
+    }
+
+    .info {
+        max-width: 973px;
+        margin-left: 64px;
+        display: flex;
+        flex-direction: column;
+        font-family: 'Karla Variable', sans-serif;
+        color: var(--black);
+    }
+
+    .info h1 {
+        font-size: 128px;
+        font-weight: 900;
+    }
+
+    .info h1 > span {
+        color: var(--red);
+    }
+
+    .info > p {
+        font-size: 32px;
+        font-weight: 300;
+    }
+</style>

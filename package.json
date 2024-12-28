@@ -9,6 +9,7 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@fontsource-variable/karla": "^5.1.0",
     "@fontsource-variable/kumbh-sans": "^5.1.0",
     "astro": "^5.1.1"
   }
