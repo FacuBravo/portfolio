@@ -3,6 +3,10 @@ import SocialMedia from "./SocialMedia.astro";
 ---
 
 <section>
+    <div class="bg-tr bg"></div>
+    <div class="bg-bl bg"></div>
+    <div class="bg-br bg"></div>
+
     <article class="info">
         <h1>Hola<span>!</span> Soy Facundo Bravo<span>.</span></h1>
         <p>Desarrollador Web</p>
@@ -13,11 +17,11 @@ import SocialMedia from "./SocialMedia.astro";
 
 <style>
     section {
+        z-index: -2;
         display: flex;
         justify-content: space-between;
         align-items: center;
         height: 920px;
-        background-color: var(--white);
         padding: 32px;
     }
 
@@ -43,4 +47,37 @@ import SocialMedia from "./SocialMedia.astro";
         font-size: 32px;
         font-weight: 300;
     }
+
+    .bg {
+        z-index: -1;
+        position: absolute;
+    }
+
+    .bg-tr {
+        width: 1059px;
+        height: 475px;
+        rotate: 55deg;
+        top: -230px;
+        right: -440px;
+        background-color: var(--red);
+    }
+
+    .bg-bl {
+        width: 504px;
+        height: 504px;
+        border-radius: 100%;
+        left: -268px;
+        bottom: -152px;
+        background-color: var(--red);
+    }
+
+    .bg-br {
+        width: 606px;
+        height: 606px;
+        border-radius: 100%;
+        right: -355px;
+        bottom: -313px;
+        border: 48px solid var(--red);
+    }
+
 </style>
