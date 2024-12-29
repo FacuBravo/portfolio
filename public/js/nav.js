@@ -1,6 +1,10 @@
 const navItems = document.querySelectorAll(".nav_item")
 const active = document.getElementById("active")
 
+navItems.forEach(item => {
+    item.addEventListener("click", moveToSection)
+})
+
 getCurrentNavItem()
 window.addEventListener("scroll", getCurrentNavItem)
 
@@ -23,4 +27,16 @@ function setNewActive(nItem) {
     }
 
     active.style.left = `${nLeft}px`
+}
+
+function moveToSection(e) {
+    e.preventDefault()
+    const { href } = e.currentTarget
+    const arr = href.split("/")
+    const id = arr[arr.length - 1].substring(1)
+    const section = document.getElementById(id)
+
+    if (section) {
+        section.scrollIntoView({ behavior: "smooth" })
+    }
 }
