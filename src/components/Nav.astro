@@ -9,11 +9,11 @@
 
 <style>
     nav {
+        width: 596px;
         z-index: 10;
-        position: sticky;
+        position: fixed;
         top: 32px;
-        margin: 32px auto;
-        width: fit-content;
+        left: calc(50% - 298px);
         background-color: var(--black_transparent);
         border-radius: 999px;
         backdrop-filter: blur(16px);
@@ -30,7 +30,6 @@
     ul > li {
         padding: 12px 24px;
         border-radius: 999px;
-        backdrop-filter: blur(16px);
     }
 
     li > a {
@@ -42,5 +41,6 @@
 
     .selected {
         background-color: var(--black_transparent);
+        backdrop-filter: blur(16px);
     }
 </style>
