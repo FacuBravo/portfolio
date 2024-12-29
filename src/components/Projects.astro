@@ -1,0 +1,48 @@
+<section>
+    <div class="bg bg-tl"></div>
+    <div class="bg bg-tr"></div>
+
+    <h1>Proyectos</h1>
+
+
+</section>
+
+<style>
+    section {
+        z-index: -2;
+        background-color: var(--black);
+        color: var(--white);
+        height: 1000px;
+        position: relative;
+        overflow-y: hidden;
+    }
+
+    h1 {
+        text-align: center;
+        font-size: 236px;
+        font-family: 'Katibeh', system-ui;
+    }
+
+    .bg {
+        position: absolute;
+        z-index: -1;
+    }
+
+    .bg-tl {
+        width: 504px;
+        height: 504px;
+        border-radius: 100%;
+        background-color: var(--white);
+        left: -268px;
+        top: -304px;
+    }
+
+    .bg-tr {
+        width: 606px;
+        height: 606px;
+        border-radius: 100%;
+        border: 48px solid var(--white);
+        top: -256px;
+        right: -355px;
+    }
+</style>
