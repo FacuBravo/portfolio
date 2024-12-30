@@ -10,7 +10,7 @@ const { link } = Astro.props;
 
 <a class=`link_button_${link.type}` target="_blank" href={link.url}>
     {link.content}
-    <img src={link.img} alt={link.content} />
+    <img src={link.img} alt={link.type} />
 </a>
 
 <style>
