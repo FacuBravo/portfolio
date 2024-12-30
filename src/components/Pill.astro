@@ -1,0 +1,54 @@
+---
+interface Props {
+    technology: string
+}
+
+const { technology } = Astro.props
+---
+
+<span class={technology.toLowerCase()}>{technology}</span>
+
+<style>
+    span {
+        font-family: "Karla Variable", sans-serif;
+        font-size: 16px;
+        font-weight: 600;
+        padding: 8px 24px;
+        border-radius: 9999px;
+    }
+
+    .typescript {
+        background-color: #077ECE;
+        color: var(--white);
+    }
+
+    .javascript {
+        background-color: #F8E026;
+        color: var(--black);
+    }
+
+    .html {
+        background-color: #E5532C;
+        color: var(--white);
+    }
+
+    .css {
+        background-color: #2267B4;
+        color: var(--white);
+    }
+
+    .angular {
+        background-color: #BB0130;
+        color: var(--white);
+    }
+
+    .electronjs {
+        background-color: #323440;
+        color: #A0EAF7;
+    }
+
+    .sqlite {
+        background-color: #95D8F5;
+        color: #0A415F;
+    }
+</style>

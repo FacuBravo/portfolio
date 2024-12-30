@@ -1,0 +1,47 @@
+---
+import type { Link } from '../types/Link';
+
+interface Props {
+    link: Link
+}
+
+const { link } = Astro.props;
+---
+
+<a class=`link_button_${link.type}` target="_blank" href={link.url}>
+    {link.content}
+    <img src={link.img} alt={link.content} />
+</a>
+
+<style>
+    a {
+        color: var(--white);
+        padding: 8px 16px;
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        text-decoration: none;
+        border-radius: 8px;
+        font-family: "Kumbh Sans Variable", sans-serif;
+        font-weight: 400;
+        font-size: 18px;
+    }
+
+    a > img {
+        width: 24px;
+        height: 24px;
+    }
+
+    .link_button_repo {
+        background-color: var(--black);
+    }
+
+    .link_button_download {
+        color: var(--black);
+        background-color: var(--white);
+    }
+
+    .link_button_demo {
+        background-color: var(--red);
+    }
+</style>

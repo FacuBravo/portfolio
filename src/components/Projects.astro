@@ -1,18 +1,145 @@
+---
+import type { Project } from "../types/Project";
+import Card from "./Card.astro";
+
+const projects: Project[] = [
+    {
+        title: "Biblioteca",
+        description:
+            "Aplicación de escritorio para la gestión de libros y préstamos de una biblioteca escolar",
+        image: "../src/assets/imgs/biblioteca.webp",
+        technologies: ["ElectronJS", "SQLite", "HTML", "CSS", "JavaScript"],
+        links: [
+            {
+                type: "download",
+                url: "/biblioteca.zip",
+                img: "../src/assets/imgs/descargar.svg",
+                content: "Descargar"
+            },
+            {
+                type: "repo",
+                url: "https://github.com/FacuBravo/biblioteca",
+                img: "../src/assets/imgs/github.svg",
+                content: "Código"
+            }
+        ],
+        height: 457,
+    },
+    {
+        title: "Shop Checkout",
+        description: "Diseño para confirmación y pago de una compra online",
+        image: "../src/assets/imgs/device_shop_checkout.webp",
+        technologies: ["HTML", "CSS", "JavaScript"],
+        links: [
+            {
+                type: "demo",
+                url: "https://facubravo.github.io/Device-Shop-Checkout/html/index.html",
+                img: "../src/assets/imgs/compartir.svg",
+                content: "Demo"
+            },
+            {
+                type: "repo",
+                url: "https://github.com/FacuBravo/Device-Shop-Checkout",
+                img: "../src/assets/imgs/github.svg",
+                content: "Código"
+            }
+        ],
+        height: 361,
+    },
+    {
+        title: "My Task Board",
+        description:
+            "Un simple gestor de tareas que crea un nuevo tablero la primera vez que se entra",
+        image: "../src/assets/imgs/my_task_board.webp",
+        technologies: ["Angular", "HTML", "CSS", "TypeScript"],
+        links: [
+            {
+                type: "demo",
+                url: "https://myangulartaskboard.netlify.app/",
+                img: "../src/assets/imgs/compartir.svg",
+                content: "Demo"
+            },
+            {
+                type: "repo",
+                url: "https://github.com/FacuBravo/MyTaskBoard",
+                img: "../src/assets/imgs/github.svg",
+                content: "Código"
+            }
+        ],
+        height: 410,
+    },
+    {
+        title: "Word Scramble",
+        description: "Juego de adivinar la palabra con las letras desordenadas",
+        image: "../src/assets/imgs/word_scramble.webp",
+        technologies: ["HTML", "CSS", "JavaScript"],
+        links: [
+            {
+                type: "demo",
+                url: "https://facubravo.github.io/javascript-word-scramble/index.html",
+                img: "../src/assets/imgs/compartir.svg",
+                content: "Demo"
+            },
+            {
+                type: "repo",
+                url: "https://github.com/FacuBravo/javascript-word-scramble",
+                img: "../src/assets/imgs/github.svg",
+                content: "Código"
+            },
+        ],
+        height: 293,
+    },
+    {
+        title: "Pricing Table",
+        description: "Diseño de tabla de precios y planes de una página",
+        image: "../src/assets/imgs/pricing_table.webp",
+        technologies: ["HTML", "CSS"],
+        links: [
+            {
+                type: "demo",
+                url: "https://facubravo.github.io/Pricing-Table/index.html",
+                img: "../src/assets/imgs/compartir.svg",
+                content: "Demo"
+            },
+            {
+                type: "repo",
+                url: "https://github.com/FacuBravo/MyTaskBoard",
+                img: "../src/assets/imgs/github.svg",
+                content: "Código"
+            },
+        ],
+        height: 289,
+    },
+]
+
+const half = Math.floor(projects.length / 2)
+const groups = [projects.slice(0, half), projects.slice(half)]
+
+const mostrarSeccion = false;
+---
+
 <section id="projects_section">
     <div class="bg bg-tl"></div>
     <div class="bg bg-tr"></div>
 
     <h1>Proyectos</h1>
 
-
+    <section class="projects">
+        {groups.map((item) =>
+            <div>
+                {item.map((p) =>
+                    <Card project={p} />
+                )}
+            </div>
+        )}
+    </section>
 </section>
 
 <style>
-    section {
+    #projects_section {
         z-index: 1;
         background-color: var(--black);
         color: var(--white);
-        height: 1000px;
         position: relative;
         overflow: hidden;
     }
@@ -20,7 +147,7 @@
     h1 {
         text-align: center;
         font-size: 236px;
-        font-family: 'Katibeh', system-ui;
+        font-family: "Katibeh", system-ui;
     }
 
     .bg {
@@ -44,5 +171,20 @@
         border: 48px solid var(--white);
         top: -256px;
         right: -355px;
+    }
+
+    .projects {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: start;
+        gap: 44px;
+        padding: 88px 0;
+    }
+
+    .projects > div {
+        display: flex;
+        flex-direction: column;
+        gap: 44px;
     }
 </style>
