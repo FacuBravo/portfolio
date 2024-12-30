@@ -131,6 +131,8 @@ const groups = [projects.slice(0, half), projects.slice(half)]
             </div>
         )}
     </section>
+    
+    <div class="separator"></div>
 </section>
 
 <style>
@@ -177,12 +179,22 @@ const groups = [projects.slice(0, half), projects.slice(half)]
         justify-content: center;
         align-items: start;
         gap: 44px;
-        padding: 88px 0;
+        padding: 88px 0 300px 0;
     }
 
     .projects > div {
         display: flex;
         flex-direction: column;
         gap: 44px;
+    }
+
+    .separator {
+        width: 110%;
+        height: 300px;
+        background-color: var(--white);
+        rotate: -5deg;
+        position: absolute;
+        bottom: -180px;
+        left: 0;
     }
 </style>
