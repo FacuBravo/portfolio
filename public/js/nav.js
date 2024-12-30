@@ -5,7 +5,6 @@ navItems.forEach(item => {
     item.addEventListener("click", moveToSection)
 })
 
-getCurrentNavItem()
 window.addEventListener("scroll", getCurrentNavItem)
 
 function getCurrentNavItem() {
