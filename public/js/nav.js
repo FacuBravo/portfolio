@@ -12,8 +12,10 @@ function getCurrentNavItem() {
         setNewActive(0)
     } else if (window.scrollY >= 612 && window.scrollY < 2344) {
         setNewActive(1)
-    } else if (window.scrollY >= 2344) {
+    } else if (window.scrollY >= 2344 && window.scrollY < 3700) {
         setNewActive(2)
+    } else if (window.scrollY >= 3700) {
+        setNewActive(3)
     }
 }
 
