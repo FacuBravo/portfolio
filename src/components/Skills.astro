@@ -61,7 +61,7 @@ const skills: Skill[] = [
         icon: "imgs/icons/bootstrap.svg",
         skill: "Bootstrap",
         color: "#8e13fe",
-    }
+    },
 ];
 ---
 
@@ -69,12 +69,21 @@ const skills: Skill[] = [
     <h1>Habilidades</h1>
 
     <section class="skills">
-        {skills.map((skill) => 
-            <article class="skill">
-                <img class="skill__icon" draggable="false" src={skill.icon} alt={skill.skill} />
-                <h3 class="skill__name" style={`color: ${skill.color}`}>{skill.skill}</h3>
-            </article>
-        )}
+        {
+            skills.map((skill) => (
+                <article class="skill">
+                    <img
+                        class="skill__icon"
+                        draggable="false"
+                        src={skill.icon}
+                        alt={skill.skill}
+                    />
+                    <h3 class="skill__name" style={`color: ${skill.color}`}>
+                        {skill.skill}
+                    </h3>
+                </article>
+            ))
+        }
     </section>
 </section>
 
@@ -125,7 +134,33 @@ const skills: Skill[] = [
 
     .skill__name {
         font-size: 64px;
-        font-family: 'Karla Variable', sans-serif;
+        font-family: "Karla Variable", sans-serif;
         font-weight: 700;
+    }
+
+    @media screen and (max-width: 1296px) {
+        h1 {
+            font-size: 160px;
+        }
+
+        .skills {
+            gap: 24px;
+            padding: 24px;
+        }
+
+        .skill {
+            padding: 32px;
+            gap: 12px;
+            border-radius: 24px;
+        }
+
+        .skill__icon {
+            width: 72px;
+            height: 72px;
+        }
+
+        .skill__name {
+            font-size: 48px;
+        }
     }
 </style>

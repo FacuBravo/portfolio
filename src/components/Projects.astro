@@ -14,14 +14,14 @@ const projects: Project[] = [
                 type: "download",
                 url: "https://drive.google.com/file/d/1_k3_Xy0gEy7ON7x7L1CZBhHDAltQc4YC/view?pli=1",
                 img: "imgs/descargar.svg",
-                content: "Descargar"
+                content: "Descargar",
             },
             {
                 type: "repo",
                 url: "https://github.com/FacuBravo/biblioteca",
                 img: "imgs/github.svg",
-                content: "Código"
-            }
+                content: "Código",
+            },
         ],
         height: 457,
     },
@@ -35,14 +35,14 @@ const projects: Project[] = [
                 type: "demo",
                 url: "https://facubravo.github.io/Device-Shop-Checkout/html/index.html",
                 img: "imgs/compartir.svg",
-                content: "Demo"
+                content: "Demo",
             },
             {
                 type: "repo",
                 url: "https://github.com/FacuBravo/Device-Shop-Checkout",
                 img: "imgs/github.svg",
-                content: "Código"
-            }
+                content: "Código",
+            },
         ],
         height: 361,
     },
@@ -57,14 +57,14 @@ const projects: Project[] = [
                 type: "demo",
                 url: "https://myangulartaskboard.netlify.app/",
                 img: "imgs/compartir.svg",
-                content: "Demo"
+                content: "Demo",
             },
             {
                 type: "repo",
                 url: "https://github.com/FacuBravo/MyTaskBoard",
                 img: "imgs/github.svg",
-                content: "Código"
-            }
+                content: "Código",
+            },
         ],
         height: 410,
     },
@@ -78,13 +78,13 @@ const projects: Project[] = [
                 type: "demo",
                 url: "https://facubravo.github.io/javascript-word-scramble/index.html",
                 img: "imgs/compartir.svg",
-                content: "Demo"
+                content: "Demo",
             },
             {
                 type: "repo",
                 url: "https://github.com/FacuBravo/javascript-word-scramble",
                 img: "imgs/github.svg",
-                content: "Código"
+                content: "Código",
             },
         ],
         height: 293,
@@ -99,39 +99,42 @@ const projects: Project[] = [
                 type: "demo",
                 url: "https://facubravo.github.io/Pricing-Table/index.html",
                 img: "imgs/compartir.svg",
-                content: "Demo"
+                content: "Demo",
             },
             {
                 type: "repo",
                 url: "https://github.com/FacuBravo/MyTaskBoard",
                 img: "imgs/github.svg",
-                content: "Código"
+                content: "Código",
             },
         ],
         height: 289,
     },
-]
+];
 
-const half = Math.floor(projects.length / 2)
-const groups = [projects.slice(0, half), projects.slice(half)]
+const half = Math.floor(projects.length / 2);
+const groups = [projects.slice(0, half), projects.slice(half)];
 ---
 
 <section id="projects_section">
     <div class="bg bg-tl"></div>
     <div class="bg bg-tr"></div>
 
-    <h1>Proyectos</h1>
+    <h1 class="projects__title">Proyectos</h1>
+    <p class="projects__info">Click para ver información</p>
 
     <section class="projects">
-        {groups.map((item) =>
-            <div>
-                {item.map((p) =>
-                    <Card project={p} />
-                )}
-            </div>
-        )}
+        {
+            groups.map((item) => (
+                <article class="projects__project">
+                    {item.map((p) => (
+                        <Card project={p} />
+                    ))}
+                </article>
+            ))
+        }
     </section>
-    
+
     <div class="separator"></div>
 </section>
 
@@ -144,10 +147,18 @@ const groups = [projects.slice(0, half), projects.slice(half)]
         overflow: hidden;
     }
 
-    h1 {
+    .projects__title {
         text-align: center;
         font-size: 236px;
         font-family: "Katibeh", system-ui;
+    }
+
+    .projects__info {
+        text-align: center;
+        font-size: 32px;
+        font-weight: 300;
+        margin-top: 16px;
+        font-family: "Karla Variable", sans-serif;
     }
 
     .bg {
@@ -182,7 +193,7 @@ const groups = [projects.slice(0, half), projects.slice(half)]
         padding: 88px 0 300px 0;
     }
 
-    .projects > div {
+    .projects__project {
         display: flex;
         flex-direction: column;
         gap: 44px;
@@ -196,5 +207,32 @@ const groups = [projects.slice(0, half), projects.slice(half)]
         position: absolute;
         bottom: -180px;
         left: 0;
+    }
+
+    @media screen and (max-width: 1296px) {
+        .projects__title {
+            font-size: 160px;
+        }
+
+        .bg-tl {
+            width: 350px;
+            height: 350px;
+            top: -204px;
+            left: -200px;
+        }
+
+        .bg-tr {
+            width: 406px;
+            height: 406px;
+            top: -210px;
+            right: -255px;
+        }
+    }
+
+    @media screen and (max-width: 1132px) {
+        .projects {
+            flex-direction: column;
+            align-items: center;
+        }
     }
 </style>

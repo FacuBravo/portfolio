@@ -88,4 +88,21 @@ const { project } = Astro.props
         gap: 8px;
         flex-wrap: wrap;
     }
+
+    .content-active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    @media screen and (max-width: 1296px) {
+    }
 </style>
+
+<script>
+    const card = document.querySelectorAll(".card")
+    card.forEach((item) => {
+        item.addEventListener('click', () => {
+            item.querySelector('.content')?.classList.toggle('content-active')
+        })
+    })
+</script>
