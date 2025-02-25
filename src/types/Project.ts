@@ -6,5 +6,5 @@ export interface Project {
     image: string
     technologies: string[]
     links: Link[]
-    height: number
+    aspectRatio: string
 }

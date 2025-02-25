@@ -1,9 +1,9 @@
 ---
 interface Props {
-    technology: string
+    technology: string;
 }
 
-const { technology } = Astro.props
+const { technology } = Astro.props;
 ---
 
 <span class={technology.toLowerCase()}>{technology}</span>
@@ -18,37 +18,44 @@ const { technology } = Astro.props
     }
 
     .typescript {
-        background-color: #077ECE;
+        background-color: #077ece;
         color: var(--white);
     }
 
     .javascript {
-        background-color: #F8E026;
+        background-color: #f8e026;
         color: var(--black);
     }
 
     .html {
-        background-color: #E5532C;
+        background-color: #e5532c;
         color: var(--white);
     }
 
     .css {
-        background-color: #2267B4;
+        background-color: #2267b4;
         color: var(--white);
     }
 
     .angular {
-        background-color: #BB0130;
+        background-color: #bb0130;
         color: var(--white);
     }
 
     .electronjs {
         background-color: #323440;
-        color: #A0EAF7;
+        color: #a0eaf7;
     }
 
     .sqlite {
-        background-color: #95D8F5;
-        color: #0A415F;
+        background-color: #95d8f5;
+        color: #0a415f;
+    }
+
+    @media screen and (max-width: 720px) {
+        span {
+            font-size: 14px;
+            padding: 4px 12px;
+        }
     }
 </style>

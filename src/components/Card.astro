@@ -1,43 +1,45 @@
 ---
-import type { Project } from "../types/Project"
-import LinkButton from "./LinkButton.astro"
-import Pill from "./Pill.astro"
+import type { Project } from "../types/Project";
+import LinkButton from "./LinkButton.astro";
+import Pill from "./Pill.astro";
 
 interface Props {
-    project: Project
+    project: Project;
 }
 
-const { project } = Astro.props
+const { project } = Astro.props;
 ---
 
-<article class="card" style=`height: ${project.height}px; background-image: url(${project.image});`>
+<article
+    class="card"
+    style=`
+    aspect-ratio: ${project.aspectRatio};
+    background-image: url(${project.image});
+`>
     <main class="content">
         <header>
             <h1>{project.title}</h1>
             <p>{project.description}</p>
             <div class="technologies">
-                {project.technologies.map((item) => 
-                    <Pill technology={item}></Pill>
-                )}
+                {project.technologies.map((item) => <Pill technology={item} />)}
             </div>
         </header>
         <footer class="actions">
-            {project.links.map((item) => 
-                <LinkButton link={item} />
-            )}
+            {project.links.map((item) => <LinkButton link={item} />)}
         </footer>
     </main>
 </article>
 
 <style>
-    .card {        
-        width: 500px;
+    .card {
+        width: 100%;
+        max-width: 500px;
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
         border-radius: 32px;
-        box-shadow: 0 8px 20px rgba(0, 0, 0, .5);
-        font-family: 'Karla Variable', sans-serif;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+        font-family: "Karla Variable", sans-serif;
         color: var(--black);
     }
 
@@ -53,7 +55,9 @@ const { project } = Astro.props
         height: 100%;
         opacity: 0;
         visibility: hidden;
-        transition: opacity 0.2s linear, visibility 0.2s linear;
+        transition:
+            opacity 0.2s linear,
+            visibility 0.2s linear;
     }
 
     .content > header {
@@ -96,13 +100,41 @@ const { project } = Astro.props
 
     @media screen and (max-width: 1296px) {
     }
+
+    @media screen and (max-width: 720px) {
+        .content {
+            padding: 16px;
+        }
+
+        .content > header {
+            gap: 8px;
+        }
+
+        .content h1 {
+            font-size: 24px;
+        }
+
+        .content p {
+            font-size: 16px;
+        }
+
+        .actions {
+            gap: 4px;
+        }
+
+        .technologies {
+            display: flex;
+            gap: 4px;
+            flex-wrap: wrap;
+        }
+    }
 </style>
 
 <script>
-    const card = document.querySelectorAll(".card")
+    const card = document.querySelectorAll(".card");
     card.forEach((item) => {
-        item.addEventListener('click', () => {
-            item.querySelector('.content')?.classList.toggle('content-active')
-        })
-    })
+        item.addEventListener("click", () => {
+            item.querySelector(".content")?.classList.toggle("content-active");
+        });
+    });
 </script>

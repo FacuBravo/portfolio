@@ -83,7 +83,10 @@ import SocialMedia from "./SocialMedia.astro";
     @media screen and (max-width: 1296px) {
         .info h1 {
             font-size: 96px;
-            font-weight: 900;
+        }
+
+        .info {
+            margin: 0;
         }
 
         .bg-bl {
@@ -98,6 +101,36 @@ import SocialMedia from "./SocialMedia.astro";
             height: 406px;
             bottom: -200px;
             right: -255px;
+        }
+    }
+
+    @media screen and (max-width: 720px) {
+        .info h1 {
+            font-size: 64px;
+        }
+
+        .bg-tr {
+            width: 859px;
+            height: 375px;
+        }
+
+        .bg-bl {
+            width: 250px;
+            height: 250px;
+            bottom: -110px;
+            left: -120px;
+        }
+
+        .bg-br {
+            width: 236px;
+            height: 236px;
+            bottom: -125px;
+            right: -125px;
+        }
+
+        section {
+            height: 620px;
+            padding: 16px;
         }
     }
 </style>

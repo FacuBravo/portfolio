@@ -23,7 +23,7 @@ const projects: Project[] = [
                 content: "Código",
             },
         ],
-        height: 457,
+        aspectRatio: "1/1",
     },
     {
         title: "Shop Checkout",
@@ -44,7 +44,7 @@ const projects: Project[] = [
                 content: "Código",
             },
         ],
-        height: 361,
+        aspectRatio: "4/3",
     },
     {
         title: "My Task Board",
@@ -66,7 +66,7 @@ const projects: Project[] = [
                 content: "Código",
             },
         ],
-        height: 410,
+        aspectRatio: "4/3",
     },
     {
         title: "Word Scramble",
@@ -87,7 +87,7 @@ const projects: Project[] = [
                 content: "Código",
             },
         ],
-        height: 293,
+        aspectRatio: "16/9",
     },
     {
         title: "Pricing Table",
@@ -108,7 +108,7 @@ const projects: Project[] = [
                 content: "Código",
             },
         ],
-        height: 289,
+        aspectRatio: "4/3",
     },
 ];
 
@@ -190,7 +190,7 @@ const groups = [projects.slice(0, half), projects.slice(half)];
         justify-content: center;
         align-items: start;
         gap: 44px;
-        padding: 88px 0 300px 0;
+        padding: 88px 24px 300px 24px;
     }
 
     .projects__project {
@@ -233,6 +233,43 @@ const groups = [projects.slice(0, half), projects.slice(half)];
         .projects {
             flex-direction: column;
             align-items: center;
+        }
+    }
+
+    @media screen and (max-width: 720px) {
+        .projects__title {
+            font-size: 64px;
+            margin-top: 64px;
+        }
+
+        .projects__info {
+            font-size: 16px;
+            margin-top: 8px;
+        }
+
+        .bg-tl {
+            width: 250px;
+            height: 250px;
+            top: -145px;
+            left: -120px;
+        }
+
+        .bg-tr {
+            width: 236px;
+            height: 236px;
+            top: -115px;
+            right: -125px;
+        }
+
+        .projects {
+            padding-top: 32px;
+            padding-bottom: 64px;
+        }
+
+        .separator {
+            height: 120px;
+            rotate: -5deg;
+            bottom: -100px;
         }
     }
 </style>
