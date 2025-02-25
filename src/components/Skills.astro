@@ -1,0 +1,131 @@
+---
+import type { Skill } from "../types/Skill";
+
+const skills: Skill[] = [
+    {
+        icon: "imgs/icons/html.svg",
+        skill: "HTML",
+        color: "#E44F26",
+    },
+    {
+        icon: "imgs/icons/css.svg",
+        skill: "CSS",
+        color: "#1572B6",
+    },
+    {
+        icon: "imgs/icons/javascript.svg",
+        skill: "JavaScript",
+        color: "#F5DE19",
+    },
+    {
+        icon: "imgs/icons/java.svg",
+        skill: "Java",
+        color: "#0074BD",
+    },
+    {
+        icon: "imgs/icons/php.svg",
+        skill: "PHP",
+        color: "#6280B6",
+    },
+    {
+        icon: "imgs/icons/sql.svg",
+        skill: "SQL",
+        color: "#DC7938",
+    },
+    {
+        icon: "imgs/icons/typescript.svg",
+        skill: "TypeScript",
+        color: "#007ACC",
+    },
+    {
+        icon: "imgs/icons/git.svg",
+        skill: "Git",
+        color: "#DD4C35",
+    },
+    {
+        icon: "imgs/icons/angular.svg",
+        skill: "Angular",
+        color: "#C3002F",
+    },
+    {
+        icon: "imgs/icons/electron.svg",
+        skill: "Electron",
+        color: "#74BFCC",
+    },
+    {
+        icon: "imgs/icons/tailwind.svg",
+        skill: "Tailwind",
+        color: "#44A8B3",
+    },
+    {
+        icon: "imgs/icons/bootstrap.svg",
+        skill: "Bootstrap",
+        color: "#8e13fe",
+    }
+];
+---
+
+<section id="skills_section">
+    <h1>Habilidades</h1>
+
+    <section class="skills">
+        {skills.map((skill) => 
+            <article class="skill">
+                <img class="skill__icon" draggable="false" src={skill.icon} alt={skill.skill} />
+                <h3 class="skill__name" style={`color: ${skill.color}`}>{skill.skill}</h3>
+            </article>
+        )}
+    </section>
+</section>
+
+<style>
+    #skills_section {
+        background-color: var(--white);
+        color: var(--black);
+        display: flex;
+        flex-direction: column;
+        gap: 64px;
+    }
+
+    h1 {
+        text-align: center;
+        font-size: 236px;
+        font-family: "Katibeh", system-ui;
+    }
+
+    .skills {
+        display: flex;
+        gap: 32px;
+        justify-content: center;
+        flex-wrap: wrap;
+        padding: 32px;
+    }
+
+    .skill {
+        background-color: var(--black);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 40px;
+        gap: 16px;
+        border-radius: 32px;
+        user-select: none;
+        transition: transform 0.2s;
+    }
+
+    .skill:hover {
+        transform: scale(1.07);
+    }
+
+    .skill__icon {
+        width: 104px;
+        height: 104px;
+        object-fit: cover;
+    }
+
+    .skill__name {
+        font-size: 64px;
+        font-family: 'Karla Variable', sans-serif;
+        font-weight: 700;
+    }
+</style>

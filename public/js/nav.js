@@ -10,8 +10,10 @@ window.addEventListener("scroll", getCurrentNavItem)
 function getCurrentNavItem() {
     if (window.scrollY < 612) {
         setNewActive(0)
-    } else if (window.scrollY >= 612) {
+    } else if (window.scrollY >= 612 && window.scrollY < 2344) {
         setNewActive(1)
+    } else if (window.scrollY >= 2344) {
+        setNewActive(2)
     }
 }
 
