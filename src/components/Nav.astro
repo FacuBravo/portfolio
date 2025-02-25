@@ -1,6 +1,8 @@
 <nav>
     <div id="active"></div>
-    <a id="introduction_0" class="nav_item" href="#introduction_section">Inicio</a>
+    <a id="introduction_0" class="nav_item" href="#introduction_section"
+        >Inicio</a
+    >
     <a id="projects_1" class="nav_item" href="#projects_section">Proyectos</a>
     <a id="skills_2" class="nav_item" href="#skills_section">Habilidades</a>
     <a id="about_3" class="nav_item" href="#">Sobre mí</a>
@@ -11,7 +13,8 @@
 <style>
     nav {
         position: fixed;
-        width: 596px;
+        width: calc(100% - 24px);
+        max-width: 596px;
         z-index: 10;
         top: 32px;
         left: calc(50% - 298px);
@@ -44,5 +47,25 @@
         background-color: var(--black_transparent);
         backdrop-filter: blur(16px);
         transition: all 0.2s ease-in-out;
+    }
+
+    @media screen and (max-width: 720px) {
+        nav {
+            padding: 10px;
+            gap: 0;
+            left: 12px;
+            top: 16px;
+            justify-content: center;
+        }
+
+        a {
+            font-size: 16px;
+            font-weight: 700;
+            padding: 8px 6px;
+        }
+
+        #active {
+            display: none;
+        }
     }
 </style>
