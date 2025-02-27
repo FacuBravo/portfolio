@@ -76,9 +76,11 @@ const { project } = Astro.props;
         font-weight: 400;
     }
 
-    .card:hover > .content {
-        opacity: 1;
-        visibility: visible;
+    @media screen and (min-width: 1296px) {
+        .card:hover > .content {
+            opacity: 1;
+            visibility: visible;
+        }
     }
 
     .actions {
@@ -96,9 +98,6 @@ const { project } = Astro.props;
     .content-active {
         opacity: 1;
         visibility: visible;
-    }
-
-    @media screen and (max-width: 1296px) {
     }
 
     @media screen and (max-width: 720px) {
@@ -131,10 +130,18 @@ const { project } = Astro.props;
 </style>
 
 <script>
-    const card = document.querySelectorAll(".card");
-    card.forEach((item) => {
-        item.addEventListener("click", () => {
-            item.querySelector(".content")?.classList.toggle("content-active");
+    if (window.innerWidth < 720) {
+        responsiveCards();
+    }
+
+    function responsiveCards() {
+        const card = document.querySelectorAll(".card");
+        card.forEach((item) => {
+            item.addEventListener("click", () => {
+                item.querySelector(".content")?.classList.toggle(
+                    "content-active"
+                );
+            });
         });
-    });
+    }
 </script>

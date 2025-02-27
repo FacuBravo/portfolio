@@ -123,8 +123,10 @@ const skills: Skill[] = [
         transition: transform 0.2s;
     }
 
-    .skill:hover {
-        transform: scale(1.07);
+    @media screen and (min-width: 1296px) {
+        .skill:hover {
+            transform: scale(1.07);
+        }
     }
 
     .skill__icon {
